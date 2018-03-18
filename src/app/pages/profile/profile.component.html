@@ -1,4 +1,25 @@
-<app-edit-img-block
-  [pathToImage]="profilePath"
-  (OnImageLoad)="onImageLoad($event)"
-></app-edit-img-block>
+<div layout="column" flex layout-align="center center">
+  <app-edit-img-block
+    [pathToImage]="profilePath"
+    (OnImageLoad)="onImageLoad($event)"
+  >
+    <div>Max size: 1 mb</div>
+    <div>Your Profile photo</div>
+  </app-edit-img-block>
+  <app-edit-img-block
+    [pathToImage]="certificatePath"
+    (OnImageLoad)="onImageLoad($event)"
+  >
+    <div>Type: X.509</div>
+    <div>Owner: owner info</div>
+    <div>Cryptography: SHA1withRSA</div>
+  </app-edit-img-block>
+  <app-edit-img-block
+    [pathToImage]="certificatePath"
+    (OnImageLoad)="onImageLoad($event)"
+  >
+    <div>Type: X.509</div>
+    <div>Owner: owner info</div>
+    <div>Cryptography: SHA1withRSA</div>
+  </app-edit-img-block>
+</div>

@@ -1,4 +1,4 @@
-import {Component, NgModule} from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-profile',
@@ -6,7 +6,9 @@ import {Component, NgModule} from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
-  profilePath = './assets/img/logo.png';
+  profilePath = './assets/img/profile.png';
+  certificatePath =  './assets/img/signed.png';
+  signaturePath = './assets/img/signature.png';
 
   constructor() {
   }
