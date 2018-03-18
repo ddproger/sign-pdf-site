@@ -1,2 +1,18 @@
-<img src="{{pathToImage}}" alt="image"/>
-<a mat-button (click)="loadImage($event)">Load</a>
+<mat-card flex>
+
+  <mat-card-content>
+    <div layout="row">
+      <div flex>
+        <img height="80" src="{{pathToImage}}" alt="image"/>
+      </div>
+      <div flex>
+        <a mat-button (click)="loadImage($event)">Upload</a>
+        <a mat-button (click)="deleteImage($event)">Delete</a>
+        <ng-content></ng-content>
+      </div>
+    </div>
+
+  </mat-card-content>
+
+
+</mat-card>

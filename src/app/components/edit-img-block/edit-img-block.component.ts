@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
+
 @Component({
   selector: 'app-edit-img-block',
   templateUrl: './edit-img-block.component.html',
@@ -15,6 +16,9 @@ export class EditImgBlockComponent implements OnInit {
   @Output()
   OnImageLoad: EventEmitter<any> = new EventEmitter<any>();
 
+  @Output()
+  OnImageDelete: EventEmitter<any> = new EventEmitter<any>();
+
   constructor() {
   }
 
@@ -25,5 +29,10 @@ export class EditImgBlockComponent implements OnInit {
     alert('image loaded');
     console.log(event);
     this.OnImageLoad.emit(event);
+  }
+  deleteImage(event: any) {
+    alert('image deleted');
+    console.log(event);
+    this.OnImageDelete.emit(event);
   }
 }

@@ -7,10 +7,13 @@ import {routing} from '@app/app.routes';
 import {HomeComponent} from '@app/pages/home/home.component';
 import {ProfileComponent} from '@app/pages/profile/profile.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule, MatToolbarModule, MatToolbarRow} from '@angular/material';
+import {
+  MatButtonModule, MatCardModule, MatCheckboxModule, MatDividerModule, MatGridListModule,
+  MatToolbarModule
+} from '@angular/material';
 import {LibraryComponent} from '@app/pages/library/library.component';
-import { SiteComponent } from '@app/pages/site/site.component';
-import { EditImgBlockComponent } from './components/edit-img-block/edit-img-block.component';
+import {SiteComponent} from '@app/pages/site/site.component';
+import {EditImgBlockComponent} from './components/edit-img-block/edit-img-block.component';
 
 
 @NgModule({
@@ -28,9 +31,15 @@ import { EditImgBlockComponent } from './components/edit-img-block/edit-img-bloc
     BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatCardModule,
+    MatGridListModule,
+    MatDividerModule
   ],
-  exports: [MatButtonModule, MatCheckboxModule],
+  exports: [MatButtonModule,
+    MatCheckboxModule,
+    MatToolbarModule,
+    MatCardModule],
   providers: [],
   bootstrap: [AppComponent]
 })
