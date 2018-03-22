@@ -1,19 +1,39 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {MyServiceService} from '@app/services/impl/my-service.service';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent {
-  profilePath = './assets/img/profile.png';
-  certificatePath =  './assets/img/signed.png';
-  signaturePath = './assets/img/signature.png';
+export class ProfileComponent implements OnInit {
+  profilePath: string;
+  certificatePath: string;
+  isEditMode = false;
 
-  constructor() {
+  constructor(private service: MyServiceService) {
   }
 
-  onImageLoad(event: any): void{
+  ngOnInit(): void {
+    this.profilePath = this.service.getProfileUrl();
+    this.certificatePath = this.service.getCertificateUrl();
+  }
+
+  onImageLoad(event: any): void {
     alert('image loaded(Profile)');
+  }
+
+  enableEditMode() {
+    this.isEditMode = true;
+  }
+
+  submit() {
+    alert('profile saved');
+    this.isEditMode = false;
+  }
+
+  cancel() {
+    alert('edit canceled');
+    this.isEditMode = false;
   }
 }

@@ -1,1 +1,29 @@
-library
+<div class="library-tree">
+  <adf-toolbar>
+    <adf-toolbar-title>
+      <adf-breadcrumb
+        class="files-breadcrumb"
+        root="Personal Files"
+        [target]="documentList"
+        [folderNode]="documentList.folderNode"
+      (navigate)="updateUrl($event.id)">
+      </adf-breadcrumb>
+    </adf-toolbar-title>
+    <adf-upload-button
+      [rootFolderId]="parentFolderId || '-root-'"
+      [adf-node-permission]="'create'"
+      (success)="uploadSuccess($event)">
+    </adf-upload-button>
+
+  </adf-toolbar>
+
+
+  <adf-document-list
+    #documentList
+    [currentFolderId]="parentFolderId || '-root-'"
+    (preview)="showPreview($event.value)"
+    (folderChange)="updateUrl(documentList.currentFolderId);">
+  </adf-document-list>
+</div>
+
+<file-uploading-dialog></file-uploading-dialog>

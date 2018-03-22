@@ -1,25 +1,71 @@
-<div layout="column" flex layout-align="center center">
+<mat-toolbar>
+  <span>{{ 'MENU_PROFILE' | translate }}</span>
+
+  <!-- This fills the remaining space of the current row -->
+  <span class="fill-remaining-space"></span>
+
+  <span>
+    <button *ngIf="!isEditMode" mat-button (click)="enableEditMode()">
+  <mat-icon>mode_edit</mat-icon>
+    {{ 'LABEL_EDIT' | translate }}
+  </button>
+  </span>
+</mat-toolbar>
+<div class="profile-card-group" *ngIf="!isEditMode">
   <app-edit-img-block
     [pathToImage]="profilePath"
-    (OnImageLoad)="onImageLoad($event)"
   >
-    <div>Max size: 1 mb</div>
-    <div>Your Profile photo</div>
+    <div>{{ 'LABEL_PROFILE_PHOTO_MAXSIZE' | translate }}</div>
+    <div>{{ 'LABEL_PROFILE_PHOTO' | translate }}</div>
   </app-edit-img-block>
   <app-edit-img-block
     [pathToImage]="certificatePath"
-    (OnImageLoad)="onImageLoad($event)"
   >
     <div>Type: X.509</div>
     <div>Owner: owner info</div>
-    <div>Cryptography: SHA1withRSA</div>
+    <div>Cryptography:
+    </div>
   </app-edit-img-block>
-  <app-edit-img-block
-    [pathToImage]="certificatePath"
-    (OnImageLoad)="onImageLoad($event)"
-  >
-    <div>Type: X.509</div>
-    <div>Owner: owner info</div>
-    <div>Cryptography: SHA1withRSA</div>
-  </app-edit-img-block>
+</div>
+<div class="flex-container" fxFlexAlign="center center" *ngIf="isEditMode">
+  <div class="fill-remaining-space"></div>
+  <mat-card fxFlex="50%">
+      <mat-card-title>{{'PROFILE_TITLE' | translate}}</mat-card-title>
+      <mat-card-content>
+      <app-edit-img-block
+        [isEditable]="true"
+        [pathToImage]="profilePath"
+        (OnImageLoad)="onImageLoad($event)"
+      >
+        <div>{{ 'LABEL_PROFILE_PHOTO_MAXSIZE' | translate }}</div>
+        <div>{{ 'LABEL_PROFILE_PHOTO' | translate }}</div>
+      </app-edit-img-block>
+      </mat-card-content>
+      <mat-divider></mat-divider>
+      <mat-card-title>{{'CERTIFICATE_TITLE' | translate}}</mat-card-title>
+      <mat-card-content>
+        <app-edit-img-block
+          [isEditable]="true"
+          [pathToImage]="certificatePath"
+          (OnImageLoad)="onImageLoad($event)"
+        >
+          <div>Type: X.509</div>
+          <div>Owner: owner info</div>
+          <div>Cryptography:
+          </div>
+        </app-edit-img-block>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-button (click)="submit()">
+          <mat-icon>save</mat-icon>
+          {{ 'BUTTON_SAVE' | translate }}
+        </button>
+        <button mat-button (click)="cancel()">
+          <mat-icon>cancel</mat-icon>
+          {{ 'BUTTON_CANCEL' | translate }}
+        </button>
+      </mat-card-actions>
+  </mat-card>
+  <div class="fill-remaining-space"></div>
 </div>
