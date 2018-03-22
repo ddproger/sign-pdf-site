@@ -1,24 +1,36 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<mat-toolbar>
 
-  <mat-toolbar-row style="min-height:100px">
-    <a style="margin-top: 20px" href="" routerLink="/">
-      <img height="100" alt="Java Logo" src="../assets/img/logo.png"/>
+<adf-toolbar color="primary">
+
+  <adf-toolbar-title>
+    <a href="" routerLink="/">
+      <img height="48px" alt="Java Logo" src="../assets/img/logo.png"/>
     </a>
-  </mat-toolbar-row>
+  </adf-toolbar-title>
+  <span class="fill-remaining-space"></span>
+  <button mat-menu-item routerLink="/">{{ 'MENU_HOME' | translate }}</button>
+  <button mat-menu-item routerLink="/library">{{ 'MENU_LIBRARY' | translate }}</button>
+  <button mat-menu-item routerLink="/profile">{{ 'MENU_PROFILE' | translate }}</button>
+  <button mat-menu-item *ngIf="sites" [matMenuTriggerFor]="sitesMenu">{{ 'MENU_SITES' | translate }}</button>
+  <mat-menu #sitesMenu="matMenu">
+  <button *ngFor="let site of sites" (click)="GoToSite(site.id)" mat-menu-item>{{site.title}}</button>
+  </mat-menu>
 
-  <mat-toolbar-row>
-    <a mat-button href="" routerLink="/">Home</a>
-    <a mat-button href="" routerLink="/library">Document Library</a>
-    <a mat-button href="" routerLink="/profile">Profile</a>
-    <a mat-button href="" routerLink="/site">Site</a>
+  <adf-toolbar-divider></adf-toolbar-divider>
+  <button mat-icon-button [matMenuTriggerFor]="langMenu">
+    <mat-icon>language</mat-icon>
+  </button>
+  <mat-menu #langMenu="matMenu">
+    <adf-language-menu>menu</adf-language-menu>
+  </mat-menu>
 
-    <span class="fill-remaining-space"></span>
+  <adf-toolbar-divider></adf-toolbar-divider>
 
-    <span>Administrator</span>
-  </mat-toolbar-row>
+  <button mat-menu-item *ngIf="!isLogin" routerLink="/login">{{ 'BUTTON_LOGIN' | translate }}</button>
+
+  <adf-userinfo *ngIf="isLogin"></adf-userinfo>
+  <button *ngIf="isLogin" mat-menu-item (click)="logout()">{{ 'BUTTON_LOGOUT' | translate }}</button>
   <!-- This fills the remaining space of the current row -->
 
-</mat-toolbar>
-
+</adf-toolbar>
 <router-outlet></router-outlet>

@@ -3,3 +3,9 @@
      Every toolbar row uses a flexbox row layout. */
   flex: 1 1 auto;
 }
+.mat-toolbar .adf-toolbar-title{
+  min-height: 200px;
+}
+button.mat-menu-item{
+  width: max-content;
+}
