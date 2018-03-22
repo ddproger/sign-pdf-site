@@ -1,0 +1,75 @@
+<mat-toolbar class="mat-toolbar mat-default mat-toolbar-single-row" ng-reflect-color="default">
+  <button
+    class="adf-viewer-close-button"
+    data-automation-id="toolbar-back"
+    mat-icon-button
+    matTooltip="{{ 'BUTTON_BACK' | translate }}"
+    (click)="onBackButtonClick(viewNode || null)">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+  <img *ngIf="viewNode" class="adf-viewer__mimeicon" [src]="viewNode.content.mimeType | adfMimeTypeIcon">
+  <div *ngIf="viewNode" class="adf-viewer-display-name">{{viewNode.name}}</div>
+</mat-toolbar>
+<mat-progress-bar *ngIf="!viewNode" mode="indeterminate"></mat-progress-bar>
+<div class="content" *ngIf="viewNode">
+  <div class="flex-container file-info-content">
+    <div class="flex-item file-preview" fxFlex="60%">
+      <adf-viewer
+        [showViewer]="true"
+        [overlayMode]="false"
+        [showSidebar]="false"
+        [fileNodeId]="viewNode.id"
+        [showToolbar]="false">
+      </adf-viewer>
+    </div>
+    <div class="flex-item" fxFlex></div>
+    <div class="flex-item file-actions" fxFlex="38%">
+      <mat-card>
+        <mat-card-title>
+          {{ 'LABEL_ACTIONS' | translate }}
+        </mat-card-title>
+        <mat-card-content>
+          <a mat-button>
+            <mat-icon>home</mat-icon>
+            Action 1
+          </a>
+          <a mat-button>
+            <mat-icon>favorite</mat-icon>
+            Action 2
+          </a>
+          <a mat-button>
+            <img height="24" src="./assets/icons/confirm-pdf.png">
+            {{ 'BUTTON_CONFIRM_PDF' | translate }}
+          </a>
+          <a mat-button>
+            <img height="24" src="./assets/icons/sign-pdf.png">
+            {{ 'BUTTON_SIGN_PDF' | translate }}
+          </a>
+
+        </mat-card-content>
+
+        <mat-card-title>
+          {{ 'LABEL_PROPERTIES' | translate }}
+        </mat-card-title>
+
+        <adf-content-metadata-card
+        [node]="viewNode">
+        </adf-content-metadata-card>
+
+        <mat-card>
+          <mat-card-title>
+            {{ 'LABEL_VERSIONS' | translate }}
+          </mat-card-title>
+          <adf-version-manager [node]="viewNode"></adf-version-manager>
+        </mat-card>
+      </mat-card>
+    </div>
+
+  </div>
+
+  <div class="flex-container file-info-comments">
+    comments list
+  </div>
+  <mat-error *ngIf="errorMessage">{{errorMessage}}</mat-error>
+
+</div>

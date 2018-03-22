@@ -1,18 +1,11 @@
-<mat-card flex>
-
-  <mat-card-content>
-    <div layout="row">
-      <div flex>
-        <img height="80" src="{{pathToImage}}" alt="image"/>
-      </div>
-      <div flex>
-        <a mat-button (click)="loadImage($event)">Upload</a>
-        <a mat-button (click)="deleteImage($event)">Delete</a>
-        <ng-content></ng-content>
-      </div>
-    </div>
-
-  </mat-card-content>
-
-
-</mat-card>
+<div style="display: block;
+  margin: auto;">
+  <div>
+    <img mat-card-md-image src="{{pathToImage}}" alt="image"/>
+  </div>
+  <div style="height: 100%; margin: auto" >
+    <a *ngIf="isEditable" mat-raised-button (click)="loadImage($event)">{{ 'BUTTON_UPLOAD' | translate }}</a>
+    <a *ngIf="isEditable" mat-raised-button (click)="deleteImage($event)">{{ 'BUTTON_DELETE' | translate }}</a>
+    <ng-content></ng-content>
+  </div>
+</div>

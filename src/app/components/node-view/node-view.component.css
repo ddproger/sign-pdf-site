@@ -1,0 +1,26 @@
+.mat-toolbar{
+  min-height: 3em;
+  border-bottom: darkgray solid 1px;
+}
+.mat-icon {
+  min-width: 20px;
+  min-height: 20px;
+}
+.material-icons {
+  min-width: 20px;
+  min-height: 20px;
+}
+.file-info-content{
+  height: 80%;
+}
+.file-preview{
+
+}
+.property-item{
+  max-width: 100px;
+}
+mat-card-content a{
+  width: 100%;
+  text-align: left;
+}
+
