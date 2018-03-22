@@ -1,0 +1,26 @@
+{
+  "MENU_HOME": "Home",
+  "MENU_LIBRARY": "Document Library",
+  "MENU_PROFILE": "Profile",
+  "MENU_SITES": "Sites",
+  "BUTTON_LOGIN": "Login",
+  "BUTTON_LOGOUT": "Logout",
+  "LABEL_EDIT": "Edit",
+  "LABEL_PROFILE_PHOTO_MAXSIZE": "Max size: 1 mb",
+  "LABEL_PROFILE_PHOTO": "Your Profile photo",
+  "BUTTON_UPLOAD": "Upload",
+  "BUTTON_DELETE": "Delete",
+  "BUTTON_BACK": "Back",
+  "LABEL_ACTIONS": "Actions",
+  "BUTTON_CONFIRM_PDF": "Confirm pdf content",
+  "BUTTON_SIGN_PDF": "Sign pdf file",
+  "LABEL_PROPERTIES": "Properties",
+  "LABEL_VERSIONS": "Versions",
+  "LOADING": "Loading",
+  "UNKNOWN_FORMAT": "Couldn't load preview",
+
+  "CERTIFICATE_TITLE": "Certificate",
+  "PROFILE_TITLE": "Profile photo",
+  "BUTTON_SAVE": "Save",
+  "BUTTON_CANCEL": "Cancel"
+}

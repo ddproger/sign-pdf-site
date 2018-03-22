@@ -1,0 +1,48 @@
+{
+  "MENU_HOME": "Домой",
+  "MENU_LIBRARY": "Документы",
+  "MENU_PROFILE": "Профиль",
+  "MENU_SITES": "Сайты",
+  "BUTTON_LOGIN": "Логин",
+  "BUTTON_LOGOUT": "Выйти",
+  "LABEL_EDIT": "Редактировать",
+  "LABEL_PROFILE_PHOTO_MAXSIZE": "Максимальный размер: 1 МБ",
+  "LABEL_PROFILE_PHOTO": "Ваше фото профиля",
+  "BUTTON_UPLOAD": "Загрузить",
+  "BUTTON_DELETE": "Удалить",
+  "BUTTON_BACK": "Назад",
+  "LABEL_ACTIONS": "Действия",
+  "BUTTON_CONFIRM_PDF": "Подтвердить прочтение",
+  "BUTTON_SIGN_PDF": "Подписать файл",
+  "LABEL_PROPERTIES": "Свойства",
+  "LABEL_VERSIONS": "Версии",
+  "ADF_VIEWER": {
+    "SIDEBAR": {
+      "METADATA": {
+        "MORE_INFORMATION": "Все свойства",
+        "LESS_INFORMATION": "Свернуть"
+      }
+    }
+  },
+  "CERTIFICATE_TITLE": "Сертификат",
+  "PROFILE_TITLE": "Фото профиля",
+  "BUTTON_SAVE": "Сохранить",
+  "BUTTON_CANCEL": "Отмена",
+
+  "CORE": {
+    "METADATA": {
+      "BASIC": {
+        "NAME": "Имя",
+        "TITLE": "Заглавие",
+        "DESCRIPTION": "Описание",
+        "AUTHOR": "Автор",
+        "MIMETYPE": "Тип файла",
+        "SIZE": "Размер",
+        "CREATOR": "Создатель",
+        "CREATED_DATE": "Дата создания",
+        "MODIFIER": "Автор изменений",
+        "MODIFIED_DATE": "Дата изменений"
+      }
+    }
+  }
+}
